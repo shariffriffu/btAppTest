@@ -1,0 +1,186 @@
+widgets example:-
+*****************************
+SizedBox: {
+    "type": "SizedBox",
+    "height": 20
+}
+*****************************
+PooUpMenu:
+*****************************
+{
+    "type": "PooUpMenu",
+    "alignment": "end",
+    "child": {
+        "type": "PopupMenu"
+    }
+}
+alignment :end , start , center
+*****************************
+image:asset
+*****************************
+{
+    "type": "Image",
+    "asset": "assets/text.png",
+    "height": 140
+}
+*****************************
+image:network
+*****************************
+{
+    "type": "Image",
+    "network": "url",
+    "height": 140
+}
+*****************************
+TextField:
+*****************************
+{
+    "type": "TextField",
+    "id": "mobile",
+    "label": "Mobile Number",
+    "hintText": "Enter Mobile Number",
+    "keyboardType": "phone",
+    "maxLength": 10,
+    "fontColor": "#0175C2",
+    "fontSize": 16,
+    "fontWeight": "bold"
+}
+*****************************
+TextField : with eye button 
+*****************************
+{
+    "type": "TextField",
+    "id": "password",
+    "hintText": "Enter Password",
+    "label": "Password",
+    "isPassword": true,
+    "maxLength": 20
+},
+*****************************
+GestureDetectorText:
+*****************************
+{
+    "type": "GestureDetectorText",
+    "text": "Forgot App Pass?",
+    "alignment": "end",
+    "onTapAction": "forgotPassword",
+    "fontSize": 14,
+    "fontWeight": "bold",
+    "fontColor": "#000000"
+},
+*****************************
+Button: inRow
+*****************************
+{
+    "type": "RowButton",
+    "mainAxisAlignment": "spaceEvenly",
+    "buttons": [
+        {
+            "label": "Cancel",
+            "buttonStyleType": "typeA",
+            "onTapAction": "cancelAction"
+        },
+        {
+            "label": "Confirm",
+            "buttonStyleType": "typeB",
+            "onTapAction": "confirmAction"
+        }
+    ]
+}
+*****************************
+Button:
+*****************************
+{
+    "type": "Button",
+    "label": "Login",
+    "buttonStyleType": "typeA"
+}
+*****************************
+*****************************
+{
+    "type": "FaceScanner",
+    "icon": "assets/biometric.png"
+}
+*****************************
+RichText
+*****************************
+
+{
+    "type": "RichText",
+    "textPrefix": "You Don’t have an account? ",
+    "textAction": "Register",
+    "fontSize": 14,
+    "fontWeight": "w500",
+    "fontColor": "#000000",
+    "OnPressfontSize": 16,
+    "OnPressfontWeight": "bold",
+    "OnPressfontColor": "FF124682"
+}
+*****************************
+validations:
+*****************************
+"validation": {
+    "mobile": {
+        "regex": "^[0-9]{10}$",
+        "errorMessage": "Please enter a valid 10-digit mobile number."
+    },
+    "password": {
+        "minLength": 4,
+        "regex": "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{4,}$",
+        "errorMessages": {
+            "empty": "Please enter your password.",
+            "tooShort": "Password is too short.",
+            "invalidFormat": "Invalid password format."
+        }
+    }
+}
+*****************************
+Label:
+*****************************
+{
+    "type": "Label",
+    "text": "Enter your email address",
+    "padding": {
+        "left": 10,
+        "right": 10
+    },
+    "alignment": "center"
+}
+*****************************
+IconInRow:
+*****************************
+{
+    "type": "IconInRow",
+    "items": [
+        {
+            "IconInRowStyleType": "typeB",
+            "name": "Bill Payment",
+            "icon": "0xefae"
+        },
+        {
+            "IconInRowStyleType": "typeB",
+            "name": "Giga Booster​",
+            "icon": "0xf0653"
+        },
+        {
+            "IconInRowStyleType": "typeB",
+            "name": "eTopUp​",
+            "icon": "0xf40b"
+        },
+        {
+            "IconInRowStyleType": "typeB",
+            "name": "Mobile Data​",
+            "icon": "0xf061a"
+        },
+        {
+            "IconInRowStyleType": "typeB",
+            "name": "Booster",
+            "icon": "0xf3c3"
+        },
+        {
+            "IconInRowStyleType": "typeB",
+            "name": "Mobile TV",
+            "icon": "0xf422"
+        }
+    ]
+}

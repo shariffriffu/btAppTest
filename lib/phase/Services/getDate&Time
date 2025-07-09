@@ -1,0 +1,13 @@
+import 'package:intl/intl.dart';
+
+String getFormattedTimestamp() {
+  DateTime now = DateTime.now();
+  String day = DateFormat('dd').format(now);
+  String month = DateFormat('MM').format(now);
+  String year = DateFormat('yyyy').format(now);
+  String hours = DateFormat('HH').format(now);
+  String minutes = DateFormat('mm').format(now);
+  String seconds = DateFormat('ss').format(now);
+  //logger.i(day + month + year + hours + minutes + seconds);
+  return day + month + year + hours + minutes + seconds;
+}

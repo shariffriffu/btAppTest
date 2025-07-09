@@ -1,0 +1,704 @@
+{
+    "login": {
+        "layout": "Column",
+        "children": [
+            {
+                "type": "SizedBox",
+                "heightPercent": 20
+            },
+            {
+                "type": "PopUpMenu",
+                "alignment": "end",
+                "color": "#F37B26",
+                "child": {
+                    "type": "PopupMenu"
+                }
+            },
+            {
+                "type": "Image",
+                "asset": "lib/phase/images/logo.png",
+                "height": 100
+            },
+            {
+                "type": "TextField",
+                "id": "mobile",
+                "label": "Mobile Number",
+                "textFieldPropertyType": "typeA",
+                "hintText": "Enter Mobile Number",
+                "keyboardType": "phone",
+                "maxLength": 8,
+                "fontColor": "#1C3144",
+                "fontWeight": "bold"
+            },
+            {
+                "type": "SizedBox",
+                "heightPercent": 8
+            },
+            {
+                "type": "TextField",
+                "id": "password",
+                "hintText": "App Pass",
+                "keyboardType": "phone",
+                "fontColor": "#124682",
+                "textFieldPropertyType": "typeA",
+                "label": "App Pass",
+                "isPassword": true,
+                "maxLength": 4
+            },
+            {
+                "type": "GestureDetectorText",
+                "text": "Forgot App Pass?",
+                "alignment": "end",
+                "onTapAction": "forgotPassword",
+                "fontSize": 14,
+                "maxLength": 4,
+                "fontWeight": "bold",
+                "textFieldPropertyType": "typeB"
+            },
+            {
+                "type": "SizedBox",
+                "heightPercent": 8
+            },
+            {
+                "type": "Button",
+                "label": "Login",
+                "buttonStyleType": "typeA",
+                "onPressed": "login"
+            },
+            {
+                "type": "SizedBox",
+                "heightPercent": 8
+            },
+            {
+                "type": "GestureDetectorImage",
+                "asset": "lib/phase/images/finger.png",
+                "height": 60,
+                "width": 60,
+                "onTapAction": "fingerPrint",
+                "biometric": true
+            },
+            {
+                "type": "lineSaparate",
+                "text": "Or sign in with",
+                "dividerColor": "#1C3144",
+                "textFieldPropertyType": "typeB"
+            },
+            {
+                "type": "ButtonInRow",
+                "NdiButtonColor": "#5AC994",
+                "image": "lib/phase/images/NDILogo.png",
+                "textFieldPropertyType": "typeC",
+                "height": 20,
+                "width": 20,
+                "alignment": "center",
+                "text": "Login with Bhutan NDI",
+                "onTapAction": "LoginWithNdi"
+            },
+            {
+                "type": "SizedBox",
+                "heightPercent": 18
+            },
+            {
+                "type": "RichText",
+                "textPrefix": "Don’t have an Account? ",
+                "textAction": " Register",
+                "onTapAction": "register",
+                "fontSize": 14,
+                "fontWeight": "w600",
+                "fontColor": "#1C3144",
+                "OnPressfontSize": 17,
+                "OnPressfontWeight": "bold",
+                "OnPressfontColor": "#F47A27"
+            }
+        ],
+        "validation": {
+            "mobile": {
+                "regex": "^[0-9]{8}$",
+                "errorMessage": "Please enter a valid mobile number."
+            },
+            "password": {
+                "regex": "^[0-9]{4}$",
+                "errorMessages": {
+                    "empty": "Please enter your password.",
+                    "tooShort": "Password must be 4 digits.",
+                    "invalidFormat": "Password must contain only digits."
+                }
+            }
+        }
+    },
+    "OtpPage": {
+        "layout": "Column",
+        "children": [
+            {
+                "type": "SizedBox",
+                "heightPercent": 20
+            },
+            {
+                "type": "PopUpMenu",
+                "alignment": "end",
+                "color": "#F37B26",
+                "child": {
+                    "type": "PopupMenu"
+                }
+            },
+            {
+                "type": "Image",
+                "asset": "lib/phase/images/logo.png",
+                "height": 140
+            },
+            {
+                "type": "Label",
+                "text": "OTP Verification",
+                "padding": {
+                    "left": 20,
+                    "right": 50
+                },
+                "alignment": "Start",
+                "fontColor": "#1C3144",
+                "fontWeight": "w600",
+                "fontSize": 16
+            },
+            {
+                "type": "SizedBox",
+                "heightPercent": 10
+            },
+            {
+                "type": "Label",
+                "text": "We have sent the verification code to your phone number",
+                "padding": {
+                    "left": 20,
+                    "right": 50
+                },
+                "alignment": "Start",
+                "fontColor": "#1C3144",
+                "fontWeight": "normal",
+                "fontSize": 14
+            },
+            {
+                "type": "SizedBox",
+                "heightPercent": 20
+            },
+            {
+                "type": "otpField",
+                "id": "forgotPinOtp"
+            },
+            {
+                "type": "SizedBox",
+                "heightPercent": 30
+            },
+            {
+                "type": "RowButton",
+                "mainAxisAlignment": "spaceEvenly",
+                "buttons": [
+                    {
+                        "label": "Resend OTP",
+                        "buttonStyleType": "typeB",
+                        "onTapAction": "resend"
+                    },
+                    {
+                        "label": "Proceed",
+                        "buttonStyleType": "typeC",
+                        "onTapAction": "proceed"
+                    }
+                ]
+            }
+        ]
+    },
+    "RegisterPage": {
+        "layout": "Column",
+        "children": [
+            {
+                "type": "SizedBox",
+                "heightPercent": 20
+            },
+            {
+                "type": "PopUpMenu",
+                "alignment": "end",
+                "color": "#F37B26",
+                "child": {
+                    "type": "PopupMenu"
+                }
+            },
+            {
+                "type": "Image",
+                "asset": "lib/phase/images/logo.png",
+                "height": 100
+            },
+            {
+                "type": "Label",
+                "text": "Registration",
+                "padding": {
+                    "left": 20,
+                    "right": 20
+                },
+                "alignment": "Start",
+                "fontColor": "#F37B26",
+                "fontWeight": "bold",
+                "fontSize": 24
+            },
+            {
+                "type": "SizedBox",
+                "heightPercent": 8
+            },
+            {
+                "type": "TextField",
+                "id": "mobile",
+                "label": "Mobile Number",
+                "textFieldPropertyType": "typeA",
+                "hintText": "Enter Mobile Number",
+                "keyboardType": "phone",
+                "maxLength": 8,
+                "fontColor": "#1C3144",
+                "fontWeight": "bold"
+            },
+            {
+                "type": "SizedBox",
+                "heightPercent": 8
+            },
+            {
+                "type": "TextField",
+                "id": "createPass",
+                "hintText": "Enter App Pass",
+                "keyboardType": "phone",
+                "fontColor": "#124682",
+                "textFieldPropertyType": "typeA",
+                "label": "Create App Pass",
+                "isPassword": true,
+                "maxLength": 4
+            },
+            {
+                "type": "SizedBox",
+                "heightPercent": 8
+            },
+            {
+                "type": "TextField",
+                "id": "confirmPass",
+                "hintText": "Enter Confirm App Pass",
+                "keyboardType": "phone",
+                "fontColor": "#124682",
+                "textFieldPropertyType": "typeA",
+                "label": "Confirm App Pass",
+                "isPassword": true,
+                "maxLength": 4
+            },
+            {
+                "type": "SizedBox",
+                "heightPercent": 8
+            },
+            {
+                "type": "CheckBox",
+                "onTapAction": "TermsAndConditions",
+                "id": "agreeTerms",
+                "label": "I agree to the Terms & Conditions",
+                "fontWeight": "w600",
+                "padding": 22,
+                "labelColor": "#1C3144"
+            },
+            {
+                "type": "SizedBox",
+                "heightPercent": 8
+            },
+            {
+                "type": "Button",
+                "label": "Register",
+                "buttonStyleType": "typeD",
+                "onPressed": "register"
+            },
+            {
+                "type": "SizedBox",
+                "heightPercent": 18
+            },
+            {
+                "type": "RichText",
+                "textPrefix": "Already have an account? ",
+                "textAction": "Login",
+                "onTapAction": "login",
+                "fontSize": 14,
+                "fontWeight": "w600",
+                "fontColor": "#1C3144",
+                "OnPressfontSize": 17,
+                "OnPressfontWeight": "bold",
+                "OnPressfontColor": "#F47A27"
+            }
+        ],
+        "validation": {
+            "mobile": {
+                "regex": "^[0-9]{8}$",
+                "errorMessage": "Please enter a valid mobile number."
+            },
+            "createPass": {
+                "regex": "^[0-9]{4}$",
+                "errorMessages": {
+                    "empty": "Please enter your password.",
+                    "tooShort": "Password must be 4 digits.",
+                    "invalidFormat": "Password must contain only digits."
+                }
+            },
+            "confirmPass": {
+                "matchField": "createPass",
+                "errorMessage": "Passwords do not match."
+            }
+        }
+    },
+    "OtpPageRegister": {
+        "layout": "Column",
+        "children": [
+            {
+                "type": "SizedBox",
+                "heightPercent": 20
+            },
+            {
+                "type": "PopUpMenu",
+                "alignment": "end",
+                "color": "#F37B26",
+                "child": {
+                    "type": "PopupMenu"
+                }
+            },
+            {
+                "type": "Image",
+                "asset": "lib/phase/images/logo.png",
+                "height": 140
+            },
+            {
+                "type": "Label",
+                "text": "Registration",
+                "padding": {
+                    "left": 20,
+                    "right": 50
+                },
+                "alignment": "Start",
+                "fontColor": "#F37B26",
+                "fontWeight": "bold",
+                "fontSize": 16
+            },
+            {
+                "type": "Label",
+                "text": "OTP Verification",
+                "padding": {
+                    "left": 20,
+                    "right": 50
+                },
+                "alignment": "Start",
+                "fontColor": "#1C3144",
+                "fontWeight": "w600",
+                "fontSize": 16
+            },
+            {
+                "type": "SizedBox",
+                "heightPercent": 20
+            },
+            {
+                "type": "Label",
+                "text": "We have sent the verification code to your phone number",
+                "padding": {
+                    "left": 20,
+                    "right": 50
+                },
+                "alignment": "Start",
+                "fontColor": "#1C3144",
+                "fontWeight": "normal",
+                "fontSize": 14
+            },
+            {
+                "type": "SizedBox",
+                "heightPercent": 20
+            },
+            {
+                "type": "otpField",
+                "id": "forgotPinOtp"
+            },
+            {
+                "type": "SizedBox",
+                "heightPercent": 30
+            },
+            {
+                "type": "RowButton",
+                "mainAxisAlignment": "spaceEvenly",
+                "buttons": [
+                    {
+                        "label": "Resend OTP",
+                        "buttonStyleType": "typeB",
+                        "onTapAction": "resend"
+                    },
+                    {
+                        "label": "Proceed",
+                        "buttonStyleType": "typeC",
+                        "onTapAction": "proceed"
+                    }
+                ]
+            },
+            {
+                "type": "SizedBox",
+                "heightPercent": 180
+            },
+            {
+                "type": "RichText",
+                "textPrefix": "Already have an account? ",
+                "textAction": "Login",
+                "onTapAction": "login",
+                "fontSize": 14,
+                "fontWeight": "w600",
+                "fontColor": "#1C3144",
+                "OnPressfontSize": 17,
+                "OnPressfontWeight": "bold",
+                "OnPressfontColor": "#F47A27"
+            }
+        ]
+    },
+    "FAQPage": {
+        "layout": "Column",
+        "title": "FAQ",
+        "children": [
+            {
+                "type": "Search",
+                "id": "search",
+                "label": "",
+                "textFieldPropertyType": "typeD",
+                "hintText": "Search",
+                "keyboardType": "phone",
+                "maxLength": 10
+            },
+            {
+                "type": "FAQ"
+            }
+        ]
+    },
+    "PinUnblockPage": {
+        "layout": "Column",
+        "title": "PIN Unblock",
+        "children": [
+            {
+                "type": "SizedBox",
+                "heightPercent": 20
+            },
+            {
+                "type": "TextField",
+                "id": "nickName",
+                "label": "Nick Name",
+                "textFieldPropertyType": "typeA",
+                "hintText": "Enter Your Nick Name",
+                "fontColor": "#1C3144",
+                "fontWeight": "bold",
+                "keyboardType": "text",
+                "maxLength": 10
+            },
+            {
+                "type": "SizedBox",
+                "heightPercent": 20
+            },
+            {
+                "type": "Button",
+                "label": "PIN UnBlock",
+                "buttonStyleType": "typeD",
+                "onPressed": "pinUnblock"
+            }
+        ]
+    },
+    "ProfilePageA": {
+        "layout": "Column",
+        "title": "Profile",
+        "children": [
+            {
+                "type": "ProfileImage",
+                "loyality": {
+                    "heading": "Loyalty Points",
+                    "fontColor": "#5FBB49",
+                    "fontWeight": "bold",
+                    "fontSize": 18,
+                    "LoyaltyPoints": {
+                        "fontColor": "#F37B26",
+                        "fontWeight": "bold",
+                        "fontSize": 26,
+                        "icon": {
+                            "codePoint": "0xecf2",
+                            "iconColor": "#F37B26",
+                            "iconSize": 34
+                        }
+                    }
+                },
+                "profileName": {
+                    "fontColor": "#1C3144",
+                    "fontWeight": "bold",
+                    "fontSize": 16
+                },
+                "profileAddress": {
+                    "fontColor": "#1C3144",
+                    "fontWeight": "normal",
+                    "fontSize": 14,
+                    "icon": {
+                        "codePoint": "0xe3ab",
+                        "iconColor": "#1C3144",
+                        "iconSize": 31
+                    }
+                },
+                "divider": {
+                    "color": "#5FBB49",
+                    "height": 1
+                }
+            }
+        ]
+    },
+    "ProfilePageB": {
+        "layout": "Column",
+        "title": "Profile",
+        "children": [
+            {
+                "type": "Label",
+                "text": "Profiles",
+                "padding": {
+                    "left": 20,
+                    "right": 50
+                },
+                "alignment": "Start",
+                "fontColor": "#5FBB49",
+                "fontWeight": "bold",
+                "fontSize": 16
+            },
+            {
+                "type": "IconInRow",
+                "items": [
+                    {
+                        "IconInRowStyleType": "typeA",
+                        "name": "Edit Profile",
+                        "conditional": false,
+                        "icon": "0xeabf"
+                    },
+                    {
+                        "IconInRowStyleType": "typeA",
+                        "name": "Manage User",
+                        "conditional": false,
+                        "icon": "0xf27a"
+                    },
+                    {
+                        "IconInRowStyleType": "typeA",
+                        "name": "App Pass​",
+                        "conditional": false,
+                        "icon": "0xf0624"
+                    },
+                    {
+                        "IconInRowStyleType": "typeA",
+                        "name": "Biometric​",
+                        "conditional": false,
+                        "icon": "0xf762"
+                    },
+                    {
+                        "IconInRowStyleType": "typeA",
+                        "name": "Mobile VC",
+                        "conditional": false,
+                        "icon": "0xef8f"
+                    }
+                ]
+            },
+            {
+                "type": "Label",
+                "text": "Services",
+                "padding": {
+                    "left": 20,
+                    "right": 50
+                },
+                "alignment": "Start",
+                "fontColor": "#5FBB49",
+                "fontWeight": "bold",
+                "fontSize": 16
+            },
+            {
+                "type": "IconInRow",
+                "sizeSpace": 30,
+                "items": [
+                    {
+                        "IconInRowStyleType": "typeA",
+                        "name": "Global Threshold",
+                        "conditional": false,
+                        "icon": "0xf3c3"
+                    },
+                    {
+                        "IconInRowStyleType": "typeA",
+                        "name": "Network Status​",
+                        "conditional": false,
+                        "icon": "0xf14f"
+                    },
+                    {
+                        "IconInRowStyleType": "typeA",
+                        "name": "Update KYC",
+                        "conditional": true,
+                        "id": "kycstatus",
+                        "icon": "0xee93"
+                    },
+                    {
+                        "IconInRowStyleType": "typeA",
+                        "name": "Link E-Load",
+                        "conditional": true,
+                        "id": "linkEloadstatus",
+                        "icon": "0xf06e8"
+                    },
+                    {
+                        "IconInRowStyleType": "typeA",
+                        "name": "Unregister Account​",
+                        "conditional": false,
+                        "icon": "0xf27f"
+                    },
+                    {
+                        "IconInRowStyleType": "typeA",
+                        "name": "FAQ",
+                        "conditional": false,
+                        "icon": "0xf2e2"
+                    }
+                ]
+            },
+            {
+                "type": "logout",
+                "label": "Log Out",
+                "spaceBetween": 20,
+                "buttonStyleType": "typeE",
+                "IconNeeded": true,
+                "icon": "0xf199",
+                "onPressed": "logout"
+            }
+        ]
+    },
+    "EditProfilePage": {
+        "layout": "Column",
+        "title": "Profile",
+        "children": [
+            {
+                "type": "Label",
+                "text": "Edit Profile",
+                "padding": {
+                    "left": 0,
+                    "right": 0,
+                    "top": 10
+                },
+                "alignment": "center",
+                "fontColor": "#1C3144",
+                "fontWeight": "bold",
+                "fontSize": 20
+            },
+            {
+                "type": "Divider",
+                "color": "#1C3144",
+                "height": 2,
+                "thickness": 2,
+                "padding": {
+                    "left": 20,
+                    "right": 20,
+                    "top": 4,
+                    "bottom": 10
+                }
+            },
+            {
+                "type": "editProfile",
+                "radius": 50
+            },
+            {
+                "type": "logout",
+                "label": "Save Changes",
+                "spaceBetween": 20,
+                "buttonStyleType": "typeE",
+                "IconNeeded": false,
+                "icon": "0xf199",
+                "onPressed": "logout"
+            }
+        ]
+    }
+}

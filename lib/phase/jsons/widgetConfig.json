@@ -1,0 +1,212 @@
+{
+    "textProperties": {
+        "fontColor": "#1C3144",
+        "fontSize": 20,
+        "fontWeight": "Bold"
+    },
+    "textFieldProperties": {
+        "typeA": {
+            "fontColor": "#1C3144",
+            "fontSize": 16,
+            "fontWeight": "Bold",
+            "backgroundColor": "#DAEFD5",
+            "padding": 20,
+            "borderRadius": 8
+        },
+        "typeB": {
+            "fontColor": "#1C3144",
+            "fontSize": 12,
+            "fontWeight": "Bold",
+            "backgroundColor": "#DAEFD5",
+            "padding": 15,
+            "borderRadius": 8
+        },
+        "typeC": {
+            "fontColor": "#FFFFFF",
+            "fontSize": 20,
+            "fontWeight": "Bold",
+            "backgroundColor": "#DAEFD5",
+            "padding": 10,
+            "borderRadius": 8
+        },
+        "typeD": {
+            "fontColor": "#FFFFFF",
+            "fontSize": 14,
+            "fontWeight": "Bold",
+            "backgroundColor": "#DAEFD5",
+            "padding": 10,
+            "borderRadius": 20
+        }
+    },
+    "buttonProperties": {
+        "typeA": {
+            "type": "elevated",
+            "padding": {
+                "horizontal": 25,
+                "vertical": 10
+            },
+            "backgroundColor": "#1C3144",
+            "foregroundColor": "#FFFFFF",
+            "shape": "stadium",
+            "fontColor": "#FFFFFF",
+            "fontSize": 20,
+            "fontWeight": "normal",
+            "letterSpacing": 1.0,
+            "heightPercent": 30,
+            "widthPercent": 10
+        },
+        "typeB": {
+            "type": "elevated",
+            "padding": {
+                "horizontal": 20,
+                "vertical": 10
+            },
+            "backgroundColor": "#F37B26",
+            "foregroundColor": "#FFFFFF",
+            "shape": "stadium",
+            "fontColor": "#FFFFFF",
+            "fontSize": 15,
+            "fontWeight": "w600",
+            "letterSpacing": 1.0
+        },
+        "typeC": {
+            "type": "elevated",
+            "padding": {
+                "horizontal": 30,
+                "vertical": 10
+            },
+            "backgroundColor": "#5FBB49",
+            "foregroundColor": "#FFFFFF",
+            "shape": "stadium",
+            "fontColor": "#FFFFFF",
+            "fontSize": 15,
+            "fontWeight": "w600",
+            "letterSpacing": 1.0
+        },
+        "typeD": {
+            "type": "elevated",
+            "padding": {
+                "horizontal": 25,
+                "vertical": 10
+            },
+            "backgroundColor": "#1C3144",
+            "foregroundColor": "#FFFFFF",
+            "shape": "stadium",
+            "fontColor": "#FFFFFF",
+            "fontSize": 20,
+            "fontWeight": "normal",
+            "letterSpacing": 1.0
+        },
+        "typeE": {
+            "type": "elevated",
+            "padding": {
+                "horizontal": 40,
+                "vertical": 12
+            },
+            "backgroundColor": "#F37B26",
+            "foregroundColor": "#FFFFFF",
+            "shape": "stadium",
+            "fontColor": "#FFFFFF",
+            "fontSize": 20,
+            "fontWeight": "bold",
+            "letterSpacing": 1.0
+        }
+    },
+    "IconInRowProperties": {
+        "typeA": {
+            "fontColor": "#000000",
+            "fontSize": 15,
+            "fontWeight": "bold",
+            "letterSpacing": 1.0,
+            "iconColor": "#000000",
+            "iconSize": 25
+        }
+    },
+    "amountCardProperties": {
+        "padding": {
+            "horizontal": 30,
+            "vertical": 12
+        },
+        "selected": {
+            "backgroundColor": "#124682",
+            "fontColor": "#FFFFFF",
+            "fontWeight": "bold"
+        },
+        "unselected": {
+            "backgroundColor": "#1F007FE2",
+            "fontColor": "#000000",
+            "fontWeight": "bold"
+        },
+        "fontSize": 16,
+        "borderRadius": 10
+    },
+    "learnVideosProperties": {
+        "type": "LearnVideos",
+        "title": "Training Videos",
+        "titleFontSize": 20,
+        "titleColor": "#333333",
+        "defaultPadding": {
+            "left": 16,
+            "right": 16
+        },
+        "defaultMargin": {
+            "top": 8,
+            "bottom": 8
+        },
+        "cardElevation": 3,
+        "cardBorderRadius": 10,
+        "thumbnailWidth": 100,
+        "thumbnailHeight": 60,
+        "thumbnailBorderRadius": 6,
+        "thumbnailBgColor": "#000000",
+        "thumbnailIconColor": "#FFFFFF",
+        "loadingColor": "#4285F4",
+        "errorColor": "#FF0000",
+        "videos": [
+            {
+                "type": "VideoItem",
+                "videoUrl": "https://www.youtube.com/watch?v=WN2N8Ovvxjs",
+                "title": "Introduction to Flutter",
+                "titleFontSize": 18,
+                "titleColor": "#333333",
+                "titleFontWeight": "bold",
+                "date": "2023-06-15",
+                "dateFontSize": 14,
+                "dateColor": "#757575",
+                "onTapAction": "playIntroVideo",
+                "autoPlay": true,
+                "mute": false,
+                "cardElevation": 4,
+                "cardBorderRadius": 12,
+                "padding": {
+                    "left": 20,
+                    "right": 20
+                },
+                "margin": {
+                    "top": 10,
+                    "bottom": 10
+                }
+            },
+            {
+                "type": "VideoItem",
+                "videoUrl": "https://www.youtube.com/watch?v=LNwOclcDOAo",
+                "title": "Advanced Techniques",
+                "date": "2023-06-20",
+                "thumbnailWidth": 120,
+                "thumbnailHeight": 80,
+                "playIconSize": 32,
+                "playIconColor": "#4285F4"
+            },
+            {
+                "type": "VideoItem",
+                "videoUrl": "https://www.youtube.com/watch?v=LNwOclcDOAo",
+                "title": "Advanced Techniques",
+                "date": "2023-06-20",
+                "thumbnailWidth": 120,
+                "thumbnailHeight": 80,
+                "playIconSize": 32,
+                "playIconColor": "#4285F4"
+            }
+        ]
+    }
+}

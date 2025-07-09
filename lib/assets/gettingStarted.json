@@ -1,0 +1,95 @@
+{
+    "type": "scaffold",
+    "args": {"resizeToAvoidBottomInset":false,
+      "body": {
+        "type": "stack",
+        "args": {
+          "children": [
+            {
+              "type": "container",
+              "args": {
+                "height": 1000,
+                "width": "infinity",
+                "child": {
+                  "type": "asset_image",
+                  "args": {
+                    "name": "lib/assets/gettingStarted.png",
+                    "fit": "cover"
+                  }
+                }
+              }
+            },
+            {
+              "type": "container",
+              "args": {
+                "height": 1000,
+                "width": 450,
+                "child": {
+                  "type": "column",
+                  "args": {
+                    "mainAxisAlignment": "center",
+                    "children": [
+                      {
+                        "type": "sized_box",
+                        "args": {
+                          "height": 200
+                        }
+                      },
+                      {
+                        "type": "container",
+                        "args": {
+                          "height": 40,
+                          "width": 298,
+                          "child": {
+                            "type": "elevated_button",
+                            "id": "StartedButton",
+                            "args": {
+                              "onPressed": "${redirectLogin()}",
+                              "style": {
+                                "elevation":20,
+                                "backgroundColor": "#5FBB49",
+                                "foregroundColor": {
+                                  "pressed": "#000000",
+                                  "focused": "#000000",
+                                  "empty": "#000000"
+                                }
+                              },
+                              "child": {
+                                "type": "container",
+                                "args": {
+                                  "alignment": "center",
+                                  "width": "infinity",
+                                  "child": {
+                                    "type": "save_context",
+                                    "args": {
+                                      "key": "form_context",
+                                      "child": {
+                                        "type": "text",
+                                        "args": {
+                                          "text": "Getting Started",
+                                          "style": {
+                                            "color": "#FFFFFF",
+                                            "fontWeight": "bold",
+                                            "fontSize": 20
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+  

@@ -1,0 +1,13 @@
+{
+  "primaryColor": "#124682",
+  "secondaryColor": "#007FE2",
+  "cardBackground": "#F6F9FE",
+  "iconColor": "#FFFFFF",
+  "starActiveColor": "#FFC107",
+  "starInactiveColor": "#B0B0B0",
+  "errorColor": "#FF0000",
+  "gradingColor1": "0xFFFFFFFF",
+  "gradingColor2": "0xFFBED5E8",
+  "gradingColor3": "0xFA72A1DA",
+  "gradingColor4": "0xFF408ACA"
+}
