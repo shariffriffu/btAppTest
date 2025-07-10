@@ -10,15 +10,15 @@ import 'package:mybtapp_testapp_testapp_test/phase/NewScreens/login.dart';
 import 'package:mybtapp_testapp_testapp_test/phase/Services/showLoading.dart';
 import 'package:mybtapp_testapp_testapp_test/phase/global/variableDeclaration.dart';
 
-class gettingStarted extends StatefulWidget {
-  const gettingStarted({Key? key, required this.jsonString}) : super(key: key);
+class GettingStarted extends StatefulWidget {
+  const GettingStarted({Key? key, required this.jsonString}) : super(key: key);
   final String jsonString;
 
   @override
-  State<gettingStarted> createState() => _GettingStartedState();
+  State<GettingStarted> createState() => _GettingStartedState();
 }
 
-class _GettingStartedState extends State<gettingStarted> {
+class _GettingStartedState extends State<GettingStarted> {
   Map<dynamic, dynamic> mapData = {};
   final registry = JsonWidgetRegistry.instance;
 
@@ -29,11 +29,14 @@ class _GettingStartedState extends State<gettingStarted> {
   }
 
   Future<void> _readJson() async {
-    final String response =
-        await rootBundle.loadString('lib/assets/gettingStarted.json');
-    setState(() {
-      mapData = json.decode(response);
-    });
+    try {
+      final String response = await rootBundle.loadString('lib/assets/gettingStarted.json');
+      setState(() {
+        mapData = json.decode(response);
+      });
+    } catch (e) {
+      logger.e("Failed to load JSON: $e");
+    }
   }
 
   Future<void> fetchAndLogin() async {
@@ -45,7 +48,7 @@ class _GettingStartedState extends State<gettingStarted> {
         MaterialPageRoute(builder: (context) => const LoginPage()),
       );
     } catch (e) {
-      navigatorKey.currentState?.pop(); // Remove loading
+      navigatorKey.currentState?.pop(); 
       logger.e("Error fetching LAB API: $e");
       showPopup(context, SERVER_ERROR);
     }
@@ -64,55 +67,68 @@ class _GettingStartedState extends State<gettingStarted> {
       );
     } else if (Platform.isIOS || Platform.isAndroid) {
       if (mapData.isEmpty) {
-        return const Center(child: CircularProgressIndicator());
-      } else {
-        return Scaffold(
-          body: Stack(
-            alignment: Alignment.center,
-            children: [
-              Positioned.fill(
-                child: Image.asset(
-                  "lib/phase/images/splashScreen.png",
-                  fit: BoxFit.cover,
-                ),
-              ),
-              Positioned(
-                top: MediaQuery.of(context).size.height * 0.33,
-                left: 0,
-                right: 0,
-                child: Center(
-                  child: Image.asset(
-                    "lib/phase/images/logoLight.png",
-                    width: MediaQuery.of(context).size.width * 0.92,
-                    height: MediaQuery.of(context).size.height * 0.25,
-                  ),
-                ),
-              ),
-              Positioned(
-                bottom: MediaQuery.of(context).size.height * 0.42,
-                child: ElevatedButton(
-                  onPressed: fetchAndLogin,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF5FBB49),
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 80, vertical: 10),
-                  ),
-                  child: const Text(
-                    "Getting Started",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
+        return const Scaffold(
+          body: Center(child: CircularProgressIndicator()),
         );
       }
+
+      return Scaffold(
+        body: SafeArea(
+          child: LayoutBuilder(
+            builder: (context, constraints) {
+              final screenHeight = constraints.maxHeight;
+              final screenWidth = constraints.maxWidth;
+
+              return Stack(
+                alignment: Alignment.center,
+                children: [
+                  Positioned.fill(
+                    child: Image.asset(
+                      "lib/phase/images/splashScreen.png",
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  Positioned(
+                    top: screenHeight * 0.33,
+                    left: 0,
+                    right: 0,
+                    child: Center(
+                      child: Image.asset(
+                        "lib/phase/images/logoLight.png",
+                        width: screenWidth * 0.92,
+                        height: screenHeight * 0.25,
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    bottom: screenHeight * 0.42,
+                    child: ElevatedButton(
+                      onPressed: fetchAndLogin,
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color(0xFF5FBB49),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 80, vertical: 10),
+                      ),
+                      child: const Text(
+                        "Getting Started",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              );
+            },
+          ),
+        ),
+      );
     }
 
-    return const Center(child: Text("Unsupported Platform"));
+    return const Scaffold(
+      body: Center(child: Text("Unsupported Platform")),
+    );
   }
 }

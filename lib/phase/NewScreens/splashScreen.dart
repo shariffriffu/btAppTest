@@ -229,13 +229,13 @@ class _SplashScreenP2State extends State<SplashScreenP2> {
               "lib/assets/gettingStartedBgWeb.png",
               fit: BoxFit.fill,
               height: MediaQuery.of(context).size.height,
-              width: MediaQuery.of(context).size.width,
+              width: MediaQuery.maybeOf(context)?.size.width ?? 360.0,
             ),
             Center(
               child: Image.asset(
                 "lib/assets/BtlogoGSWeb.png",
                 height: MediaQuery.of(context).size.height / 3.5,
-                width: MediaQuery.of(context).size.width / 3.5,
+                width: MediaQuery.maybeOf(context)?.size.width ?? 360.0 / 3.5,
               ),
             ),
           ],

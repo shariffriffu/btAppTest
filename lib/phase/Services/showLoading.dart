@@ -40,7 +40,7 @@ void successDialog(BuildContext context, String message) {
     builder: (BuildContext context) {
       return Container(
         height: MediaQuery.of(context).size.height,
-        width: MediaQuery.of(context).size.width,
+        width: MediaQuery.maybeOf(context)?.size.width ?? 360.0,
         color: Colors.white38,
         child: SimpleDialog(
           alignment: Alignment.center,
@@ -128,7 +128,7 @@ showPopupVC(BuildContext context, String message) {
     builder: (BuildContext context) {
       return Container(
         height: MediaQuery.of(context).size.height,
-        width: MediaQuery.of(context).size.width,
+        width: MediaQuery.maybeOf(context)?.size.width ?? 360.0,
         color: Colors.white38,
         child: AlertDialog(
           title: Text("Info"),
@@ -157,7 +157,7 @@ showPopup(BuildContext context, String message) {
     builder: (BuildContext context) {
       return Container(
         height: MediaQuery.of(context).size.height,
-        width: MediaQuery.of(context).size.width,
+        width: MediaQuery.maybeOf(context)?.size.width ?? 360.0,
         color: Colors.white38,
         child: Center(
           child: SimpleDialog(
@@ -168,7 +168,7 @@ showPopup(BuildContext context, String message) {
                 Center(
                   child: Container(
                     height: 250,
-                    width: MediaQuery.of(context).size.width - 20,
+                    width: MediaQuery.maybeOf(context)?.size.width ?? 360.0 - 20,
                     decoration: const BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(15.0)),
                       color: Color.fromRGBO(232, 232, 232, 1),
@@ -277,7 +277,7 @@ showPopupUnblock(BuildContext context, String message) {
     builder: (BuildContext context) {
       return Container(
         height: MediaQuery.of(context).size.height,
-        width: MediaQuery.of(context).size.width,
+        width: MediaQuery.maybeOf(context)?.size.width ?? 360.0,
         color: Colors.white38,
         child: Center(
           child: SimpleDialog(
@@ -288,7 +288,7 @@ showPopupUnblock(BuildContext context, String message) {
                 Center(
                   child: Container(
                     height: 250,
-                    width: MediaQuery.of(context).size.width - 20,
+                    width: MediaQuery.maybeOf(context)?.size.width ?? 360.0 - 20,
                     decoration: const BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(15.0)),
                       color: Color.fromRGBO(232, 232, 232, 1),
@@ -419,7 +419,7 @@ showInfoPopup(BuildContext context, String message) {
     builder: (BuildContext context) {
       return Container(
         height: MediaQuery.of(context).size.height,
-        width: MediaQuery.of(context).size.width,
+        width: MediaQuery.maybeOf(context)?.size.width ?? 360.0,
         color: Colors.white38,
         child: Center(
           child: SimpleDialog(
@@ -430,7 +430,7 @@ showInfoPopup(BuildContext context, String message) {
                 Center(
                   child: Container(
                     height: 250,
-                    width: MediaQuery.of(context).size.width - 10,
+                    width: MediaQuery.maybeOf(context)?.size.width ?? 360.0 - 10,
                     decoration: const BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(15.0)),
                       color: Color.fromRGBO(232, 232, 232, 1),

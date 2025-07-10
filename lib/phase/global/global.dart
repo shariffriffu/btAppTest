@@ -217,7 +217,7 @@ class CustomisedWidgets {
         child: ListTile(
           leading: SizedBox(
             height: 50,
-            width: MediaQuery.of(context).size.width * 0.15, // Adjust width
+            width: MediaQuery.maybeOf(context)?.size.width ?? 360.0 * 0.15, // Adjust width
             child: Icon(icon, color: const Color(0xFF124682), size: 30),
           ),
           title: Text(
@@ -274,7 +274,7 @@ class PopupMenuHelper {
     String text,
     ThemeProvider themeProvider,
   ) {
-    final screenWidth = MediaQuery.of(context).size.width;
+    final screenWidth = MediaQuery.maybeOf(context)?.size.width ?? 360.0;
     final screenHeight = MediaQuery.of(context).size.height;
     final double desiredWidth = screenWidth * 0.50;
 
@@ -406,7 +406,7 @@ class CustomBottomNavigation extends StatelessWidget {
   // Navigation handlers
   @override
   Widget build(BuildContext context) {
-    final double screenWidth = MediaQuery.of(context).size.width;
+    final double screenWidth = MediaQuery.maybeOf(context)?.size.width ?? 360.0;
     final double screenHeight = MediaQuery.of(context).size.height;
 
     // Dynamically calculated sizes
@@ -1146,7 +1146,7 @@ Widget _buildOttRow({
   required int index,
   required BuildContext context,
 }) {
-  final screenWidth = MediaQuery.of(context).size.width;
+  final screenWidth = MediaQuery.maybeOf(context)?.size.width ?? 360.0;
   final scale = MediaQuery.of(context).textScaleFactor;
 
   return Padding(
@@ -1540,7 +1540,7 @@ Widget buildTrackerList(
                                       tx['amount'],
                                       style: TextStyle(
                                         fontSize:
-                                            MediaQuery.of(context).size.width *
+                                            MediaQuery.maybeOf(context)?.size.width ?? 360.0 *
                                                 0.03,
                                         fontFamily: themeProvider.fontFamily,
                                         fontWeight: FontWeight.bold,

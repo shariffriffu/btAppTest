@@ -114,7 +114,7 @@ class _SplashScreenP2State extends State<SplashScreenP2> {
             child: Center(
               child: Image.asset(
                 "lib/phase/images/logoLight.png",
-                width: MediaQuery.of(context).size.width * 0.92,
+                width: MediaQuery.maybeOf(context)?.size.width ?? 360.0 * 0.92,
                 height: MediaQuery.of(context).size.height * 0.25,
               ),
             ),

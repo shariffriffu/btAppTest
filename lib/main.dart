@@ -65,7 +65,7 @@ class MyApp extends StatelessWidget {
               // '/homePage': (context) => const homePageNew(jsonString: ''),
               // '/homePage': (context) => const DashBoard(),
               '/gettingStarted': (context) =>
-                  const gettingStarted(jsonString: ""),
+                  const GettingStarted(jsonString: ""),
             },
             debugShowCheckedModeBanner: false,
             navigatorKey: navigatorKey,

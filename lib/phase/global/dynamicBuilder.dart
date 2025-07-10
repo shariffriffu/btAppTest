@@ -1,5 +1,7 @@
 import 'dart:math';
 import 'dart:convert';
+import 'package:fluttertoast/fluttertoast.dart';
+
 import 'variableDeclaration.dart';
 import 'package:pinput/pinput.dart';
 import 'package:flutter/services.dart';
@@ -9,16 +11,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';
 import '../Provider/themeProvider.dart';
 import 'package:slide_to_act/slide_to_act.dart';
-import 'package:mybtapp_testapp_testapp_test/main.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:json_dynamic_widget/json_dynamic_widget.dart';
 import 'package:mybtapp_testapp_testapp_test/phase/global/global.dart';
-import 'package:mybtapp_testapp_testapp_test/phase/Services/showLoading.dart';
-
-
-
-
-
 
 Widget buildFromLayout<T>(
   List layoutJson,
@@ -41,7 +36,7 @@ Widget buildFromLayout<T>(
       switch (item['type']) {
         case 'SizedBox':
           final screenHeight = MediaQuery.of(context).size.height;
-          final screenWidth = MediaQuery.of(context).size.width;
+          final screenWidth = MediaQuery.maybeOf(context)?.size.width ?? 360.0;
 
           final heightPercent = item['heightPercent']?.toDouble();
           final widthPercent = item['widthPercent']?.toDouble();
@@ -179,16 +174,19 @@ Widget buildFromLayout<T>(
           }
 
           final properties = themeProvider.buttonProperties[buttonType] ?? {};
-          logger.i("properties: ${themeProvider.buttonProperties}");
+          logger.i("properties: ${themeProvider.buttonProperties[buttonType] }");
+          Fluttertoast.showToast(
+            msg: "properties: ${themeProvider.buttonProperties[buttonType]}",
+            toastLength: Toast.LENGTH_SHORT,
+          );
           final textStyle = TextStyle(
-            color: parseColor(properties["fontColor"] ?? "#F37B26"),
+            color: parseColor(properties["fontColor"] ?? "#FFFFFF"),
             fontSize: (properties["fontSize"] ?? 14).toDouble(),
             fontWeight: parseFontWeight(properties["fontWeight"] ?? "normal"),
             fontFamily: themeProvider.fontFamily,
             letterSpacing: (properties['letterSpacing'] ?? 1.0).toDouble(),
           );
-
-          final screenWidth = MediaQuery.of(context).size.width;
+          final screenWidth = MediaQuery.maybeOf(context)?.size.width ?? 360.0;
 
           final horizontalPadding =
               (properties['padding']?['horizontal'] ?? 40).toDouble();
@@ -584,7 +582,7 @@ Widget buildFromLayout<T>(
           }
 
         case 'IconInRow':
-          final screenWidth = MediaQuery.of(context).size.width;
+          final screenWidth = MediaQuery.maybeOf(context)?.size.width ?? 360.0;
           final itemSize = screenWidth / 3.5;
 
           final iconInRowItems = (item['items'] ?? []) as List;
@@ -1449,7 +1447,7 @@ Widget buildFromLayout<T>(
             );
             return Center(
               child: SizedBox(
-                width: MediaQuery.of(context).size.width * 0.8,
+                width: MediaQuery.maybeOf(context)?.size.width ?? 360.0 * 0.8,
                 height: MediaQuery.of(context).size.height * 0.06,
                 child: ElevatedButton(
                   onPressed: () {
@@ -1724,7 +1722,6 @@ Widget buildFromLayout<T>(
             },
           );
 
-       
         case 'ProfileImage':
           {
             final profileImageString = registry.getValue('profileImage');
@@ -1736,7 +1733,8 @@ Widget buildFromLayout<T>(
                 profileImageBytes = null;
               }
             }
-            double screenWidth = MediaQuery.of(context).size.width;
+            double screenWidth =
+                MediaQuery.maybeOf(context)?.size.width ?? 360.0;
 
             final loyality = item['loyality'] ?? {};
             final loyaltyPoints = loyality['LoyaltyPoints'] ?? {};
@@ -1953,7 +1951,8 @@ Widget buildFromLayout<T>(
               letterSpacing: (properties['letterSpacing'] ?? 1.0).toDouble(),
             );
 
-            final screenWidth = MediaQuery.of(context).size.width;
+            final screenWidth =
+                MediaQuery.maybeOf(context)?.size.width ?? 360.0;
 
             final horizontalPadding =
                 (properties['padding']?['horizontal'] ?? 40).toDouble();
