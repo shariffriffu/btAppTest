@@ -49,7 +49,8 @@ class ThemeProvider extends ChangeNotifier {
 
       // Fallback if not found in SharedPreferences
       if (globalJson == null || widgetJson == null) {
-        logger.w("Theme JSON not found in SharedPreferences. Fetching from FetchPages...");
+        logger.w(
+            "Theme JSON not found in SharedPreferences. Fetching from FetchPages...");
 
         globalJson = await FetchPages.getPageByName("properties.json");
         widgetJson = await FetchPages.getPageByName("widgetConfig.json");
@@ -72,12 +73,17 @@ class ThemeProvider extends ChangeNotifier {
       registry.setValue("_widgetProperties", _widgetProperties);
 
       // Colors
-      primaryColor = _parseColor(_globleProperties["primaryColor"] ?? "#2196F3");
-      secondaryColor = _parseColor(_globleProperties["secondaryColor"] ?? "#448AFF");
-      cardBackground = _parseColor(_globleProperties["cardBackground"] ?? "#FFFFFF");
+      primaryColor =
+          _parseColor(_globleProperties["primaryColor"] ?? "#2196F3");
+      secondaryColor =
+          _parseColor(_globleProperties["secondaryColor"] ?? "#448AFF");
+      cardBackground =
+          _parseColor(_globleProperties["cardBackground"] ?? "#FFFFFF");
       iconColor = _parseColor(_globleProperties["iconColor"] ?? "#000000");
-      starActiveColor = _parseColor(_globleProperties["starActiveColor"] ?? "#FFD700");
-      starInactiveColor = _parseColor(_globleProperties["starInactiveColor"] ?? "#BDBDBD");
+      starActiveColor =
+          _parseColor(_globleProperties["starActiveColor"] ?? "#FFD700");
+      starInactiveColor =
+          _parseColor(_globleProperties["starInactiveColor"] ?? "#BDBDBD");
       errorColor = _parseColor(_globleProperties["errorColor"] ?? "#FF0000");
 
       // Font
